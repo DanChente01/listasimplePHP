@@ -1,0 +1,30 @@
+[33mcommit a63d5cb11236ba65fda56413842eb33722870679[m
+Author: Daniel Vergara <danielvsuarez01@gmail.com>
+Date:   Fri Feb 24 12:42:32 2017 -0500
+
+    Se modificó la prueba para la lista empleados
+
+[33mcommit ae932150768e88743e57ad558661e5380fdea257[m
+Author: Daniel Vergara <danielvsuarez01@gmail.com>
+Date:   Fri Feb 24 12:41:54 2017 -0500
+
+    Se agregaron metodos mas que el promedio y suma salarios a la lista
+
+[33mcommit 274149e7f439723e78caeecf64804c2e8b2be865[m
+Author: Daniel Vergara <danielvsuarez01@gmail.com>
+Date:   Fri Feb 24 10:45:39 2017 -0500
+
+    Se modificaron los metodos para la lista empleados
+
+[33mcommit acb4ca90e4d2797ec0c9fddab22406635bc7e500[m
+Author: Daniel Vergara <danielvsuarez01@gmail.com>
+Date:   Fri Feb 24 10:35:32 2017 -0500
+
+    Se modificó clase nodo para que fuera una lista de empleados
+
+[33mcommit eac9c9aa918527ba750b8eab69a6b8af2be0d0b1[m
+Author: Daniel Vergara <danielvsuarez01@gmail.com>
+Date:   Thu Feb 23 23:54:50 2017 -0500
+
+    Se creo el proyecto lista simple
+    con prueba e interfaz
