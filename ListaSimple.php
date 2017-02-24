@@ -82,5 +82,58 @@
         }
         return $Mensaje;
       }
+      function masQuePromedio(){
+        $contador = 0;
+        $sumatoria = 0;
+        $promedio = 0;
+        $P = $this->PTR;
+        while ($P != null) {
+          $sumatoria = $sumatoria += $P->getSalario();
+          $contador++;
+          $P = $P->getSig();
+        }
+        $promedio = $sumatoria/$contador;
+        echo "Promedio:".$promedio."<br>";
+        $P = $this->PTR;
+        $numeroTrabajadores = 0;
+        $detalles = "";
+        while ($P != null) {
+          if ($P->getSalario()>$promedio) {
+            $numeroTrabajadores ++;
+            $detalles = $detalles.$P->getNombre()." ".$P->getSalario().", ";
+          }
+          $P = $P->getSig();
+        }
+        return $detalles;
+      }
+      function sumaSalarios(){
+        $suma = 0;
+        $mayor = 0;
+        $menor = $this->PTR->getEdad();
+        $P = $this->PTR;
+        $detalles = "";
+        if ($P == null) {
+          return 0;
+        }else {
+          while ($P != null) {
+            if ($P->getEdad()<$menor) {
+              $menor = $P->getEdad();
+            }
+            if ($P->getEdad()>$mayor) {
+              $mayor = $P->getEdad();
+            }
+            $P = $P->getSig();
+          }
+        }
+        $P = $this->PTR;
+        while ($P != null) {
+          if (($P->getEdad()==$menor)||($P->getEdad()==$mayor)) {
+            $suma += $P->getSalario();
+            $detalles = $detalles.$P->getNombre()." ".$P->getEdad()." ".$P->getSalario().", ";
+          }
+          $P= $P->getSig();
+        }
+        return $suma."<br>".$detalles;
+      }
   }
 ?>
