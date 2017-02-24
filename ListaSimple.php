@@ -31,7 +31,7 @@
         $P = $this->PTR;
         $Encontrado = false;
         while (($P != null)&&(!$Encontrado)) {
-          if ($P->getInfo() == $C) {
+          if ($P->getCodigo() == $C) {
             $Encontrado = true;
           }else {
             $P = $P->getSig();
@@ -44,7 +44,7 @@
         $Ant = $P;
         $Encontrado = false;
         while (($P != null)&&(!$Encontrado)) {
-          if ($P->getInfo() == $C) {
+          if ($P->getCodigo() == $C) {
             $Encontrado = true;
           }else {
             $Ant = $P;
@@ -76,7 +76,7 @@
           $Mensaje = "Lista Vacia";
         }else {
           while ($P != null) {
-            $Mensaje = $Mensaje.$P->getInfo().", ";
+            $Mensaje = $Mensaje.$P->getCodigo()." ".$P->getNombre()." ".$P->getEdad()." ".$P->getSalario()."<br>";
             $P = $P->getSig();
           }
         }
