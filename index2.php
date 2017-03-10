@@ -77,12 +77,15 @@
         }
       }
 
-
-      echo "<br><hr><b> Mas que el promedio</b>";
-      echo "<br>".$_SESSION['lista']->masQuePromedio();
-
-      echo "<br><hr><b> Suma salario mayor y menor edad</b>";
-      echo "<br>".$_SESSION['lista']->sumaSalarios();
+      $lista = $_SESSION['lista']->VisualizarLista();
+      if ($lista == "Lista Vacia") {
+        echo "<br>No hacer nada";
+      }else {
+          echo "<br><hr><b>Mas que el promedio</b>";
+          echo "<br>".$_SESSION['lista']->masQuePromedio();
+          echo "<br><hr><b> Suma salario mayor y menor edad</b>";
+          echo "<br>".$_SESSION['lista']->sumaSalarios();
+      }
       //Visualizar
       echo "<br><hr>".$_SESSION['lista']->VisualizarLista();
      ?>
