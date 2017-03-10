@@ -16,13 +16,19 @@
     <h1>Listas Simples Intefaz</h1>
     <form action="index2.php" method="post">
       Agregar Inicio
-      <input type="text" name="agregarInicio">
+      <input type="text" name="agregarInicioCodigo">
+      <input type="text" name="agregarInicioNombre">
+      <input type="text" name="agregarInicioEdad">
+      <input type="text" name="agregarInicioSalario">
       <input type="submit" value="Agregar Inicio">
     </form>
     <br>
     <form action="index2.php" method="post">
       Agregar Final
-      <input type="text" name="agregarFinal">
+      <input type="text" name="agregarFinalCodigo">
+      <input type="text" name="agregarFinalNombre">
+      <input type="text" name="agregarFinalEdad">
+      <input type="text" name="agregarFinalSalario">
       <input type="submit" value="Agregar Final">
     </form>
     <br>
@@ -39,20 +45,24 @@
     </form>
 
     <?php
-      if (isset($_POST["agregarInicio"])) {
-        $n = new Nodo($_POST["agregarInicio"]);
+      if (isset($_POST["agregarInicioCodigo"],$_POST["agregarInicioNombre"],
+                $_POST["agregarInicioEdad"],$_POST["agregarInicioSalario"])) {
+        $n = new Nodo($_POST["agregarInicioCodigo"],$_POST["agregarInicioNombre"],
+                  $_POST["agregarInicioEdad"],$_POST["agregarInicioSalario"]);
         $_SESSION['lista']->AgregarNodoPrincipio($n);
       }
 
-      if (isset($_POST["agregarFinal"])) {
-        $n = new Nodo($_POST["agregarFinal"]);
+      if (isset($_POST["agregarFinalCodigo"],$_POST["agregarFinalNombre"],
+                $_POST["agregarFinalEdad"],$_POST["agregarFinalSalario"])) {
+        $n = new Nodo($_POST["agregarFinalCodigo"],$_POST["agregarFinalNombre"],
+                  $_POST["agregarFinalEdad"],$_POST["agregarFinalSalario"]);
         $_SESSION['lista']->AgregarNodoFinal($n);
       }
 
       if (isset($_POST["buscar"])) {
         $b = $_SESSION['lista']->BuscarNodo($_POST["buscar"]);
         if ($b == true) {
-          echo "<br>El elemento encontrado es: ".$b->getInfo();
+          echo "<br>El elemento encontrado es: ".$b->getCodigo()." ".$b->getNombre();
         }else {
           echo "<br>Elemento no encontrado";
         }
@@ -66,6 +76,13 @@
           echo "<br>Elemento no eliminado";
         }
       }
+
+
+      echo "<br><hr><b> Mas que el promedio</b>";
+      echo "<br>".$_SESSION['lista']->masQuePromedio();
+
+      echo "<br><hr><b> Suma salario mayor y menor edad</b>";
+      echo "<br>".$_SESSION['lista']->sumaSalarios();
       //Visualizar
       echo "<br><hr>".$_SESSION['lista']->VisualizarLista();
      ?>
