@@ -56,7 +56,7 @@
         }else {
           if ($P == $this->PTR) {
             $this->PTR = $this->PTR->getSig();
-            if ($P == $Final) {
+            if ($P == $this->Final) {
               $this->Final = null;
             }
           }else {
@@ -93,7 +93,7 @@
           $P = $P->getSig();
         }
         $promedio = $sumatoria/$contador;
-        echo "Promedio:".$promedio."<br>";
+        //echo "Promedio:".$promedio."<br>";
         $P = $this->PTR;
         $numeroTrabajadores = 0;
         $detalles = "";
