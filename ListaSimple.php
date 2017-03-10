@@ -93,17 +93,22 @@
           $P = $P->getSig();
         }
         $promedio = $sumatoria/$contador;
-        //echo "Promedio:".$promedio."<br>";
+        
         $P = $this->PTR;
         $numeroTrabajadores = 0;
         $detalles = "";
-        while ($P != null) {
-          if ($P->getSalario()>$promedio) {
-            $numeroTrabajadores ++;
-            $detalles = $detalles.$P->getNombre()." ".$P->getSalario().", ";
+        if ($contador == 1) {
+          echo "Debe Agregar mas empleados";
+        }else {
+          while ($P != null) {
+            if ($P->getSalario()>$promedio) {
+              $numeroTrabajadores ++;
+              $detalles = $detalles.$P->getNombre()." ".$P->getSalario().", ";
+            }
+            $P = $P->getSig();
           }
-          $P = $P->getSig();
         }
+        //echo "Promedio:".$promedio."<br>";
         return $detalles;
       }
       function sumaSalarios(){
